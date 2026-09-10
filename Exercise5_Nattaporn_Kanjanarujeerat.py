@@ -1,0 +1,10 @@
+num1 = int(input("Enter a number: "))
+num2 = int(input("Enter a number: "))
+plus = num1 + num2
+Minus = num1 - num2
+times = num1 * num2
+Division = num1 / num2
+print(num1,"+",num2,"=",plus)
+print(num1,"-",num2,"=",Minus)
+print(num1,"*",num2,"=",times)
+print(num1,"/",num2,"=",Division)
