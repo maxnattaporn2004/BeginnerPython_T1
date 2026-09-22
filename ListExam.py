@@ -3,8 +3,16 @@ def showBill():
     print("My Food".center(40,"-"))
     for num in range(len(menuList)):
         print("ชื่ออาหาร : %s ราคาอาหาร : %d Bath"%(menuList[num],priceList[num]))
-        result += priceList[num]
-    print("ราคารวม : %d Bath" %(result))
+
+def totalPrice():
+    total = 0
+    for num in range(len(priceList)):
+        total += priceList[num]
+    return total
+
+def vatShowBill(total):
+    vat = total+(total*0.07)
+    print("ราคารวม = %f Bath" %vat)
 
 menuList =[]
 priceList = []
@@ -20,3 +28,4 @@ while True:
         priceList.append(menuPrice)
 
 showBill()
+vatShowBill(totalPrice())
