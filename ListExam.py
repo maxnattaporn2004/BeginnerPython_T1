@@ -1,13 +1,13 @@
 def showBill():
-    result = 0
     print("My Food".center(40,"-"))
     for num in range(len(menuList)):
-        print("ชื่ออาหาร : %s ราคาอาหาร : %d Bath"%(menuList[num],priceList[num]))
+        print("ชื่ออาหาร : %s ราคาอาหาร : %d Bath"%(menuList[num][0],menuList[num][1]))
 
 def totalPrice():
+    pass
     total = 0
-    for num in range(len(priceList)):
-        total += priceList[num]
+    for num in range(len(menuList)):
+        total += menuList[num][1]
     return total
 
 def vatShowBill(total):
@@ -15,7 +15,7 @@ def vatShowBill(total):
     print("ราคารวม = %f Bath" %vat)
 
 menuList =[]
-priceList = []
+
 
 while True:
     meunName =input("Please enter menu").capitalize()
@@ -24,8 +24,8 @@ while True:
         break
     else:
         menuPrice = int(input("Please enter price"))
-        menuList.append(meunName)
-        priceList.append(menuPrice)
+        menuList.append([meunName,menuPrice])
+
 
 showBill()
 vatShowBill(totalPrice())
